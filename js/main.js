@@ -43,8 +43,9 @@ document.getElementById("btnTinhTien").onclick = function () {
 
         default:
             break;
-    }document.getElementById("divThanhTien").style.display="block";
-    document.getElementById("xuatTien").innerHTML=tongTien;
+    }
+    document.getElementById("divThanhTien").style.display = "block";
+    document.getElementById("xuatTien").innerHTML = tongTien;
 
 }
 
@@ -107,4 +108,45 @@ function tinhChiTiet(soKm, tgCho, giaCho, giaKm1, giaKmTren1, giaKmTren19) {
         alert("Vui lòng nhập vào số hợp lệ");
     }
 
+}
+
+document.getElementById("btnInHoaDon").onclick = function () {
+    var loaiXe = layLoaiXe();
+    var soKm = document.getElementById("txtSoKM").value;
+    var tgCho = document.getElementById("txtTGCho").value;
+    
+    switch (loaiXe) {
+        case "grabX":
+            tinhChiTiet(soKm, tgCho, GRABX_1, GRABX_2, GRABX_3, GRABX_WAIT)
+            break;
+        case "grabSUV":
+            tinhChiTiet(soKm, tgCho, GRABSUV_1, GRABSUV_1, GRABSUV_1, GRABSUV_WAIT)
+            break;
+        case "grabBlack":
+            tinhChiTiet(soKm, tgCho, GARABBLACK_1, GARABBLACK_2, GARABBLACK_3, GARABBLACK_WAIT)
+            break;
+
+        default:
+            break;
+    }
+    
+    var taoTR_tbody = document.createElement("tr");
+
+    //tạo 3 cột
+    var taoTD_soKm = document.createElement("td");
+    taoTD_soKm.innerHTML = soKm;
+    var taoTD_thoiGianCho = document.createElement("td");
+    taoTD_thoiGianCho.innerHTML = tgCho;
+    var taoTD_loaiXe = document.createElement("td");
+    taoTD_loaiXe.innerHTML = loaiXe;
+    var taoTD_thanhTien = document.createElement("td");
+    taoTD_thanhTien.innerHTML = tongTien + "&nbsp; VND";
+
+    taoTR_tbody.appendChild(taoTD_soKm);
+    taoTR_tbody.appendChild(taoTD_thoiGianCho);
+    taoTR_tbody.appendChild(taoTD_loaiXe);
+    taoTR_tbody.appendChild(taoTD_thanhTien);
+
+    document.getElementById("tbody").appendChild(taoTR_tbody);
+    
 }

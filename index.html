@@ -89,7 +89,7 @@
 				</div>
 				<div class="wrap-contact100-form-btn">
 					<div class="contact100-form-bgbtn"></div>
-					<button type="button" class="contact100-form-btn" data-toggle="modal" data-target="#exampleModal">
+					<button id="btnInHoaDon" type="button" class="contact100-form-btn" data-toggle="modal" data-target="#exampleModal">
 						IN HÓA ĐƠN
 					</button>
 				</div>
@@ -104,6 +104,41 @@
 			</div>
 		</div>
 	</div>
+
+	<div id="exampleModal" class="modal" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <h5 class="modal-title text-center">Hóa đơn</h5>
+			  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			  </button>
+			</div>
+			<div class="modal-body">
+				<table class="table">
+					<thead id="thead">
+						<tr>
+							<th>Số km</th>
+							<th>Thời gian chờ</th>
+							<th>Loại xe</th>
+							<th>Thành Tiền</th>
+						</tr>
+					</thead>
+					<tbody id="tbody">
+						
+					</tbody>
+				</table>
+			</div>
+			<div class="modal-body" id=" TongTien">
+				
+				</div>
+			<div class="modal-footer">
+			  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			</div>
+			
+		  </div>
+		</div>
+	  </div>
 
 	<script src="js/main.js"></script>
 	<!--===============================================================================================-->
